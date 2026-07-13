@@ -1,5 +1,4 @@
 {
-    "$schema": "https://getcomposer.org/schema.json",
     "name": "boa/results",
     "description": "Boatrace Open API for Results",
     "license": "MIT",
@@ -11,8 +10,8 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/BoatraceOpenAPI/results/issues",
-        "source": "https://github.com/BoatraceOpenAPI/results"
+        "issues": "https://github.com/boatraceopenapi/results/issues",
+        "source": "https://github.com/boatraceopenapi/results"
     },
     "require": {
         "php": "^8.4",
@@ -20,7 +19,8 @@
         "nesbot/carbon": "^2.63 || ^3.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^12.0",
+        "ergebnis/composer-normalize": "^2.52",
+        "phpunit/phpunit": "^13.0",
         "vimeo/psalm": "^6.0"
     },
     "autoload": {
@@ -32,5 +32,11 @@
         "psr-4": {
             "BOA\\Results\\Tests\\": "tests/"
         }
-    }
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true
+        }
+    },
+    "$schema": "https://getcomposer.org/schema.json"
 }

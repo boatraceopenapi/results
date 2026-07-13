@@ -1,9 +1,9 @@
-name: test
+name: Test
 
 on:
   push:
     branches:
-      - 'gh-pages'
+      - gh-pages
   pull_request:
   schedule:
     - cron: '0 0 * * *'
@@ -11,33 +11,25 @@ on:
 
 jobs:
   test:
-    name: PHPUnit ${{ matrix.phpunit-version }} on PHP ${{ matrix.php-version }} (Ubuntu 24.04)
+    name: PHPUnit ${{ matrix.phpunit-version }} on PHP ${{ matrix.php-version }} (${{ matrix.dependency-version }}, Ubuntu 24.04)
     runs-on: ubuntu-24.04
-    permissions:
-      contents: read
-      id-token: write
     strategy:
       matrix:
         php-version:
           - '8.4'
-        phpunit-version:
-          - '12.0'
     steps:
       - name: Setup PHP ${{ matrix.php-version }}
-        uses: shivammathur/setup-php@7c071dfe9dc99bdf297fa79cb49ea005b9fcadbc
+        uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-version }}
-          tools: composer:v2
-          coverage: pcov
 
-      - name: Checkout Repository
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
-      - name: Require PHPUnit ${{ matrix.phpunit-version }}
-        run: composer require --dev phpunit/phpunit:^${{ matrix.phpunit-version }} --with-all-dependencies
-
-      - name: Install Dependencies
-        run: composer update --prefer-dist --no-interaction --no-progress
+      - name: Install dependencies
+        run: composer install --no-interaction --prefer-dist --no-progress
 
       - name: Run PHPUnit ${{ matrix.phpunit-version }}
-        run: vendor/bin/phpunit --configuration=phpunit.xml.dist --coverage-xml=build/coverage-xml
+        run: vendor/bin/phpunit --configuration=phpunit.xml.dist --no-progress
