@@ -51,7 +51,7 @@
 
 ### [![v3](https://img.shields.io/badge/Boatrace_Open_API_for_Results-v3-blue)](https://github.com/boatraceopenapi/results/tree/gh-pages/docs/v3)
 
-> 📅 対応期間: 2025年05月01日以降
+> 📅 対応期間: 2016年08月01日以降
 
 ```bash
 https://boatraceopenapi.github.io/results/v3/YYYY/YYYYMMDD.json
@@ -59,7 +59,7 @@ https://boatraceopenapi.github.io/results/v3/YYYY/YYYYMMDD.json
 
 ### [![v2](https://img.shields.io/badge/Boatrace_Open_API_for_Results-v2-lightgrey)](https://github.com/boatraceopenapi/results/tree/gh-pages/docs/v2)
 
-> 📅 対応期間: 2025年05月01日以降
+> 📅 対応期間: 2016年09月01日以降
 
 ```bash
 https://boatraceopenapi.github.io/results/v2/YYYY/YYYYMMDD.json
