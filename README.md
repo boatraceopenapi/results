@@ -71,20 +71,38 @@ https://boatraceopenapi.github.io/results/v2/YYYY/YYYYMMDD.json
 
 > **データが存在しない日付**（対応期間外・未来日付など）を指定した場合、GitHub Pages の仕様により **HTTP 404** が返されます。
 
+## 📦 レスポンス仕様
+
+レスポンスの JSON 構造・各フィールドの詳細・v2 との違いについては、スキーマドキュメントを参照してください。
+
+→ [docs/schema.md](docs/schema.md)
+
+`stadium_number`（レース場）や `racer_place_number`（着順）などのコード値の意味は、後継 API のコード表を参照してください。
+
+→ [boatraceopenapi/api の docs/v1/codes.md](https://github.com/boatraceopenapi/api/blob/gh-pages/docs/v1/codes.md)
+
+## 🤖 AI エージェントで利用する場合
+
+Claude Code や Codex などの AI エージェントにデータの取り込みや分析を任せる場合は、次の URL を読ませてください。
+
+```
+https://boatraceopenapi.github.io/results/llms.txt
+```
+
 ## 🧩 サンプル
 
 ### [![v3](https://img.shields.io/badge/Boatrace_Open_API_for_Results-v3-blue)](https://github.com/boatraceopenapi/results/tree/gh-pages/docs/v3)
 
-- 2025年05月01日の出走表
+- 2025年05月01日の結果
   - [https://boatraceopenapi.github.io/results/v3/2025/20250501.json](https://boatraceopenapi.github.io/results/v3/2025/20250501.json)
-- 本日の出走表（ JST〔UTC+9〕基準 ）
+- 本日の結果（ JST〔UTC+9〕基準 ）
   - [https://boatraceopenapi.github.io/results/v3/today.json](https://boatraceopenapi.github.io/results/v3/today.json)
 
 ### [![v2](https://img.shields.io/badge/Boatrace_Open_API_for_Results-v2-lightgrey)](https://github.com/boatraceopenapi/results/tree/gh-pages/docs/v2)
 
-- 2025年05月01日の出走表
+- 2025年05月01日の結果
   - [https://boatraceopenapi.github.io/results/v2/2025/20250501.json](https://boatraceopenapi.github.io/results/v2/2025/20250501.json)
-- 本日の出走表（ JST〔UTC+9〕基準 ）
+- 本日の結果（ JST〔UTC+9〕基準 ）
   - [https://boatraceopenapi.github.io/results/v2/today.json](https://boatraceopenapi.github.io/results/v2/today.json)
 
 ## 🔗 関連リポジトリ
@@ -92,6 +110,8 @@ https://boatraceopenapi.github.io/results/v2/YYYY/YYYYMMDD.json
 | 🏷️ 対象 | 📂 リポジトリ |
 |:--|:--|
 | 🆕 後継 API | [boatraceopenapi/api](https://github.com/boatraceopenapi/api) |
+| 出走表 | [boatraceopenapi/programs](https://github.com/boatraceopenapi/programs) |
+| 直前情報 | [boatraceopenapi/previews](https://github.com/boatraceopenapi/previews) |
 
 ## 📄 ライセンス
 
