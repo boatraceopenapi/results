@@ -1,4 +1,4 @@
-# 🚤 Boatrace Open API for Results
+# Boatrace Open API for Results
 
 [![v3](https://img.shields.io/badge/Boatrace_Open_API_for_Results-v3-blue)](https://github.com/boatraceopenapi/results/tree/gh-pages/docs/v3)
 [![v2](https://img.shields.io/badge/Boatrace_Open_API_for_Results-v2-lightgrey)](https://github.com/boatraceopenapi/results/tree/gh-pages/docs/v2)
@@ -12,64 +12,60 @@
 [![keepalive](https://github.com/boatraceopenapi/results/actions/workflows/keepalive.yml/badge.svg)](https://github.com/boatraceopenapi/results/actions/workflows/keepalive.yml)
 [![dependabot-updates](https://github.com/boatraceopenapi/results/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/boatraceopenapi/results/actions/workflows/dependabot/dependabot-updates)
 
+---
+
 ## 🛑 非推奨のお知らせ
 
-> ⚠️ 本リポジトリ（Boatrace Open API for Results）は**今後の利用が推奨されません**。<br>
-> 
-> 👉 今後は後継リポジトリの [boatraceopenapi/api](https://github.com/boatraceopenapi/api) をご利用ください。
-> 
-> ℹ️ なお、非推奨ではありますが本リポジトリのデータ更新・API 提供自体は**引き続き稼働しています**。<br>
-> 既存の利用箇所を直ちに移行する必要はなく、現状のまま継続してご利用いただくことも可能です。<br>
-> ただし、将来的に更新が停止される可能性もあるため、可能な範囲で後継 API への移行をご検討ください。
+本リポジトリ（Boatrace Open API for Results）は**今後の利用が推奨されません**。今後は後継リポジトリの [boatraceopenapi/api](https://github.com/boatraceopenapi/api) をご利用ください。
+
+なお、非推奨ではありますが本リポジトリのデータ更新・API 提供自体は**引き続き稼働しています**。既存の利用箇所を直ちに移行する必要はなく、現状のまま継続してご利用いただくことも可能です。ただし、将来的に更新が停止される可能性もあるため、可能な範囲で後継 API への移行をご検討ください。
+
+---
 
 ## ⚠️ 注意事項
 
-> **本 API を利用する前に、以下の内容をご確認ください。**
->
-> - ⚡ **本 API は非公式です。**
->   BOATRACE 公式サイトおよび関連団体とは一切関係ありません。
->
-> - 🕒 **データはリアルタイムではありません。**
->   GitHub Actions による約 3 時間間隔の定期更新を行っています。リアルタイム配信ではないため、最新の情報が反映されるまで数時間程度の遅れが生じる場合があります。
->
-> - 📊 **データの正確性・完全性は保証していません。**
->   収集・変換の都合により、欠損や誤りが含まれる可能性があります。
->
-> - 🚫 **公式な情報が必要な場合は、必ず BOATRACE 公式サイトをご確認ください。**
->
-> - 🙇‍♂️ **本 API の利用は自己責任でお願いします。**
+**本 API を利用する前に、以下の内容をご確認ください。**
 
-## 📌 概要
+- **非公式です。** BOATRACE 公式サイトおよび関連団体とは一切関係ありません。
+- **リアルタイムではありません。** GitHub Actions による約 3 時間間隔の定期更新のため、最新情報の反映まで数時間程度の遅れが生じる場合があります。
+- **正確性・完全性は保証していません。** 収集・変換の都合により、欠損や誤りが含まれる可能性があります。
+- **公式な情報が必要な場合は、必ず BOATRACE 公式サイトをご確認ください。**
+- **利用は自己責任でお願いします。**
 
-この API では、ボートレース（競艇）のデータを取得できます。<br>
-データは GitHub Pages 上で公開されており、JSON 形式で提供されます。
+---
 
-- **対応レース場**: 全国 24 場すべてに対応しています。特定のレース場のみを取り出すエンドポイントはなく、1 日分のデータに全場の情報が含まれます。
-- **取得可能なデータ**: 結果
+## 📝 概要
+
+この API では、ボートレース（競艇）のデータを取得できます。データは GitHub Pages 上で公開されており、JSON 形式で提供されます。
+
+| 項目 | 内容 |
+|---|---|
+| 対応レース場 | 全国 24 場すべて（1 日分のデータに全場の情報を含む） |
+| 取得可能なデータ | 結果 |
+
+---
 
 ## 🌐 エンドポイント
 
-### [![v3](https://img.shields.io/badge/Boatrace_Open_API_for_Results-v3-blue)](https://github.com/boatraceopenapi/results/tree/gh-pages/docs/v3)
-
-> 📅 対応期間: 2016年08月01日以降
+**v3**（対応期間: 2016年08月01日以降）
 
 ```bash
 https://boatraceopenapi.github.io/results/v3/YYYY/YYYYMMDD.json
 ```
 
-### [![v2](https://img.shields.io/badge/Boatrace_Open_API_for_Results-v2-lightgrey)](https://github.com/boatraceopenapi/results/tree/gh-pages/docs/v2)
-
-> 📅 対応期間: 2016年10月01日以降
+**v2**（対応期間: 2016年10月01日以降）
 
 ```bash
 https://boatraceopenapi.github.io/results/v2/YYYY/YYYYMMDD.json
 ```
 
-📅 YYYY → 年<br>
-📅 YYYYMMDD → 年月日<br>
-（ 日付は日本標準時 JST〔UTC+9〕基準 ）
+- `YYYY` → 年
+- `YYYYMMDD` → 年月日
+- 日付は日本標準時（JST / UTC+9）基準
 
-> **データが存在しない日付**（対応期間外・未来日付など）を指定した場合、GitHub Pages の仕様により **HTTP 404** が返されます。
+> データが存在しない日付（対応期間外・未来日付など）を指定した場合、GitHub Pages の仕様により HTTP 404 が返されます。
+
+---
 
 ## 📦 レスポンス仕様
 
@@ -81,6 +77,8 @@ https://boatraceopenapi.github.io/results/v2/YYYY/YYYYMMDD.json
 
 → [boatraceopenapi/api の docs/v1/codes.md](https://github.com/boatraceopenapi/api/blob/gh-pages/docs/v1/codes.md)
 
+---
+
 ## 🤖 AI エージェントで利用する場合
 
 Claude Code や Codex などの AI エージェントにデータの取り込みや分析を任せる場合は、次の URL を読ませてください。
@@ -89,29 +87,31 @@ Claude Code や Codex などの AI エージェントにデータの取り込み
 https://boatraceopenapi.github.io/results/llms.txt
 ```
 
-## 🧩 サンプル
+---
 
-### [![v3](https://img.shields.io/badge/Boatrace_Open_API_for_Results-v3-blue)](https://github.com/boatraceopenapi/results/tree/gh-pages/docs/v3)
+## 💡 サンプル
 
-- 2025年05月01日の結果
-  - [https://boatraceopenapi.github.io/results/v3/2025/20250501.json](https://boatraceopenapi.github.io/results/v3/2025/20250501.json)
-- 本日の結果（ JST〔UTC+9〕基準 ）
-  - [https://boatraceopenapi.github.io/results/v3/today.json](https://boatraceopenapi.github.io/results/v3/today.json)
+**v3**
 
-### [![v2](https://img.shields.io/badge/Boatrace_Open_API_for_Results-v2-lightgrey)](https://github.com/boatraceopenapi/results/tree/gh-pages/docs/v2)
+- 2025年05月01日の結果: [https://boatraceopenapi.github.io/results/v3/2025/20250501.json](https://boatraceopenapi.github.io/results/v3/2025/20250501.json)
+- 本日の結果（JST基準）: [https://boatraceopenapi.github.io/results/v3/today.json](https://boatraceopenapi.github.io/results/v3/today.json)
 
-- 2025年05月01日の結果
-  - [https://boatraceopenapi.github.io/results/v2/2025/20250501.json](https://boatraceopenapi.github.io/results/v2/2025/20250501.json)
-- 本日の結果（ JST〔UTC+9〕基準 ）
-  - [https://boatraceopenapi.github.io/results/v2/today.json](https://boatraceopenapi.github.io/results/v2/today.json)
+**v2**
+
+- 2025年05月01日の結果: [https://boatraceopenapi.github.io/results/v2/2025/20250501.json](https://boatraceopenapi.github.io/results/v2/2025/20250501.json)
+- 本日の結果（JST基準）: [https://boatraceopenapi.github.io/results/v2/today.json](https://boatraceopenapi.github.io/results/v2/today.json)
+
+---
 
 ## 🔗 関連リポジトリ
 
-| 🏷️ 対象 | 📂 リポジトリ |
-|:--|:--|
-| 🆕 後継 API | [boatraceopenapi/api](https://github.com/boatraceopenapi/api) |
+| 対象 | リポジトリ |
+|---|---|
+| 後継 API | [boatraceopenapi/api](https://github.com/boatraceopenapi/api) |
 | 出走表 | [boatraceopenapi/programs](https://github.com/boatraceopenapi/programs) |
 | 直前情報 | [boatraceopenapi/previews](https://github.com/boatraceopenapi/previews) |
+
+---
 
 ## 📄 ライセンス
 
